@@ -8,6 +8,8 @@ How to Run
 
 Open the `index.html` page within your browser and move your cursor around
 
+[Live Demo](https://dmyerscough.github.io/week8/index.html)
+
 License
 -------
 
