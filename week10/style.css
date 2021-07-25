@@ -18,3 +18,7 @@ hr.pacmen {
     background-image: url(images/linebreak.png);
     background-repeat: no-repeat;
 }
+
+.center-text {
+    text-align: center;
+}
