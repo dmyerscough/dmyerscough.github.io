@@ -9,6 +9,8 @@ How to Run
 In order to run this webpage, you just need to open the `index.html` file and click on `Add Pacmen` and then click `Start button`. After a Pacmen has been
 loaded and the start button has been pressed, the Pacmen should start moving in random directions.
 
+[Live demo](https://dmyerscough.github.io/week7/index.html)
+
 License
 -------
 
