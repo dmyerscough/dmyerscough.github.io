@@ -10,6 +10,13 @@
     border: 0px;
 }
 
+.profile-picture {
+    text-align: right;
+    align-content: right;
+    border-radius: 50%;
+    width: 50px;
+}
+
 /* Remove the underline from links */
 a:hover, a:visited, a:link, a:active {
     text-decoration: none;
@@ -25,4 +32,9 @@ hr.pacmen {
 
 .center-text {
     text-align: center;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: -webkit-box!important;
+    flex-basis: 100%;
 }
