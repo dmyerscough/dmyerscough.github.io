@@ -2,12 +2,17 @@
 <title>Hello World</title>
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'PRgaLWN4q3XlKzBcSrfN'})
+    FingerprintJS.load({token: 'PRgaLWN4q3XlKzBcSrfN', endpoint: 'https://damian.mirulabs.com'})
       .then(fp => fp.get())
       .then(result => console.log(result.visitorId));
   }
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js" onload="initFingerprintJS()" ></script>
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js"
+  onload="initFingerprintJS()"
+></script>
+	
 <body>
 
 	<a href="week4/index.html">Week 4 Pacman Example</a>
