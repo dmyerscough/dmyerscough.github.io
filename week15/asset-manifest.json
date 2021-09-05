@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/week15/static/css/main.912e431a.chunk.css",
-    "main.js": "/week15/static/js/main.8f45afb5.chunk.js",
+    "main.js": "/week15/static/js/main.932e62c1.chunk.js",
     "runtime-main.js": "/week15/static/js/runtime-main.0cf7d3ff.js",
     "static/js/2.e85e81f2.chunk.js": "/week15/static/js/2.e85e81f2.chunk.js",
     "index.html": "/week15/index.html",
@@ -11,6 +11,6 @@
     "static/js/runtime-main.0cf7d3ff.js",
     "static/js/2.e85e81f2.chunk.js",
     "static/css/main.912e431a.chunk.css",
-    "static/js/main.8f45afb5.chunk.js"
+    "static/js/main.932e62c1.chunk.js"
   ]
 }
