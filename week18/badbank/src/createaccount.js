@@ -13,7 +13,7 @@ function CreateAccount() {
   const ctx = React.useContext(UserContext);
 
   const CreateAccountSchema = Yup.object().shape({
-    name: Yup.string()
+    username: Yup.string()
       .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
@@ -59,7 +59,17 @@ function CreateAccount() {
                   placeholder="Enter name"
                   autoComplete="new-username"
                 />
-                {errors.name && touched.name ? <div>{errors.name}</div> : null}
+                {errors.username && touched.username ? (
+                  <div
+                    style={{
+                      color: "red",
+                      fontWeight: "bold",
+                      fontSize: "x-small",
+                    }}
+                  >
+                    {errors.username}
+                  </div>
+                ) : null}
                 <br />
                 Email address
                 <br />
@@ -70,7 +80,15 @@ function CreateAccount() {
                   autoComplete="new-username"
                 />
                 {errors.email && touched.email ? (
-                  <div>{errors.email}</div>
+                  <div
+                    style={{
+                      color: "red",
+                      fontWeight: "bold",
+                      fontSize: "x-small",
+                    }}
+                  >
+                    {errors.email}
+                  </div>
                 ) : null}
                 <br />
                 Password
@@ -83,7 +101,15 @@ function CreateAccount() {
                   autoComplete="new-password"
                 />
                 {errors.password && touched.password ? (
-                  <div>{errors.password}</div>
+                  <div
+                    style={{
+                      color: "red",
+                      fontWeight: "bold",
+                      fontSize: "x-small",
+                    }}
+                  >
+                    {errors.password}
+                  </div>
                 ) : null}
                 <br />
                 <button
