@@ -114,12 +114,15 @@ function CreateAccount() {
                 <br />
                 <button
                   type="submit"
-                  className="btn btn-outline-primary mr-1"
+                  className="btn btn-outline-primary w-100"
                   disabled={!(isValid && dirty)}
                 >
                   Create Account
                 </button>
-                <button type="reset" className="btn btn-outline-primary mr-1">
+                <button
+                  type="reset"
+                  className="btn btn-outline-primary mt-1 w-100"
+                >
                   Clear
                 </button>
               </Form>
