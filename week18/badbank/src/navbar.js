@@ -1,7 +1,7 @@
 function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light stroke">
         <a className="navbar-brand" href="#">
           BadBank
         </a>
@@ -31,11 +31,6 @@ function NavBar() {
             <li className="nav-item">
               <a className="nav-link" href="#/withdraw/">
                 Withdraw
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/balance/">
-                Balance
               </a>
             </li>
             <li className="nav-item">

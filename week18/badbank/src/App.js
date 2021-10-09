@@ -5,7 +5,6 @@ import { Home } from "./home";
 import { CreateAccount } from "./createaccount";
 import { Deposit } from "./deposit";
 import { Withdraw } from "./withdraw";
-import { Balance } from "./balance";
 import { AllData } from "./alldata";
 
 import { UserContext } from "./context";
@@ -31,7 +30,6 @@ function Spa() {
           <Route path="/CreateAccount/" component={CreateAccount} />
           <Route path="/deposit/" component={Deposit} />
           <Route path="/withdraw/" component={Withdraw} />
-          <Route path="/balance/" component={Balance} />
           <Route path="/alldata/" component={AllData} />
         </div>
       </UserContext.Provider>
