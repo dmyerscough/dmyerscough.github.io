@@ -1,26 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 
 import { Field, Form, Formik } from "formik";
 import { Card, UserContext } from "./context";
 
 function Deposit() {
+  // Change balance to trigger a page re-render
+  const [_, setBalanceUpdate] = useState(null);
+
   const DepositSchema = Yup.object().shape({
-    deposit: Yup.number().required("Required"),
+    depositAmount: Yup.number().min(1).required("Required"),
   });
 
   const ctx = React.useContext(UserContext);
 
-  const users = ctx.users.map((user) => {
-    // return user;
+  const users = ctx.users.map((user, idx) => {
     return (
-      <option key={user} value={user}>
-        {user}
+      <option key={idx} value={idx}>
+        {user.name}
       </option>
     );
   });
-
-  console.log(users);
 
   return (
     <Card
@@ -30,30 +30,32 @@ function Deposit() {
       body={
         <Formik
           initialValues={{
-            username: "",
-            email: "",
-            password: "",
+            userPosition: "",
+            depositAmount: 0,
           }}
           validationSchema={DepositSchema}
           onSubmit={(values) => {
-            // ctx.users.push({
-            //   name: values.username,
-            //   email: values.email,
-            //   password: values.password,
-            //   balance: 100,
-            // });
-
-            console.log("Saved");
+            ctx.users[values.userPosition].balance += values.depositAmount;
+            setBalanceUpdate(ctx.users[values.userPosition].balance);
           }}
+          validateOnChange={(values) =>
+            setBalanceUpdate(ctx.users[values.userPosition].balance)
+          }
         >
-          {({ errors, touched, isValid, dirty }) => (
+          {({ errors, touched, isValid, dirty, values }) => (
             <Form>
-              Account
+              Account Balance:{" "}
+              {values.userPosition === ""
+                ? "$0"
+                : "$" + ctx.users[values.userPosition].balance}
               <br />
-              <Field as="select" name="username" className="form-control">
+              <Field as="select" name="userPosition" className="form-control">
+                <option key="selectUser" value="" disabled>
+                  Select User
+                </option>
                 {users}
               </Field>
-              {errors.username && touched.username ? (
+              {errors.userPosition && touched.userPosition ? (
                 <div
                   style={{
                     color: "red",
@@ -61,7 +63,7 @@ function Deposit() {
                     fontSize: "x-small",
                   }}
                 >
-                  {errors.username}
+                  {errors.userPosition}
                 </div>
               ) : null}
               <br />
@@ -69,12 +71,13 @@ function Deposit() {
               <br />
               <Field
                 className="form-control"
-                name="amount"
+                name="depositAmount"
                 placeholder="Deposit Amount"
                 type="number"
-                autoComplete="new-password"
+                default="0"
+                min="0"
               />
-              {errors.password && touched.password ? (
+              {errors.depositAmount && touched.depositAmount ? (
                 <div
                   style={{
                     color: "red",
@@ -82,7 +85,7 @@ function Deposit() {
                     fontSize: "x-small",
                   }}
                 >
-                  {errors.password}
+                  {errors.depositAmount}
                 </div>
               ) : null}
               <br />
