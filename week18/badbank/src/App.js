@@ -19,7 +19,7 @@ function Spa() {
           users: [
             {
               name: "Damian",
-              email: "Damian.Myerscough@gmail.com",
+              email: "damian@example.com",
               password: "12345678",
               balance: 100,
             },
