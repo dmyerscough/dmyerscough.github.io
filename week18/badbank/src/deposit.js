@@ -6,7 +6,7 @@ import { Card, UserContext } from "./context";
 
 function Deposit() {
   // Change balance to trigger a page re-render
-  const [_, setBalanceUpdate] = useState(null);
+  const [balanceUpdate, setBalanceUpdate] = useState(null);
 
   const DepositSchema = Yup.object().shape({
     depositAmount: Yup.number().min(1).required("Required"),
@@ -30,8 +30,8 @@ function Deposit() {
       body={
         <Formik
           initialValues={{
-            userPosition: "",
-            depositAmount: 0,
+            userPosition: 0,
+            depositAmount: balanceUpdate,
           }}
           validationSchema={DepositSchema}
           onSubmit={(values) => {
